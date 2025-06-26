@@ -19,7 +19,7 @@ const Header = ({ currentPage, setCurrentPage, logoSrc }) => {
       <div className="header-inner-container">
         {/* Logo */}
         <div className="agency-logo">
-          <img src={logoSrc} alt="Kognito India Logo" className="agency-logo-image" />
+          <img src="logo.jpeg" alt="Kognito India Logo" className="agency-logo-image" />
         </div>
 
         <nav className="nav-desktop">
