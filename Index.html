@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kognito India - Digital Marketing Agency</title>
-    <!-- Link to external CSS file -->
+    <!-- Link to your custom CSS file -->
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts - Inter for a modern typeface -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Lucide Icons CDN -->
+    <!-- Lucide Icons CDN for vector icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-    <!-- The root div where our React app will be mounted -->
+    <!-- The root div where your React app will be mounted by ReactDOM -->
     <div id="root"></div>
 
-    <!-- Link to external JavaScript file -->
-    <script src="App.js"></script>
+    <!-- React and ReactDOM CDNs - these are necessary for running React directly in the browser -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <!-- Babel for transforming JSX in the browser; essential if not using a build tool locally -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Your React application code, which will be processed by Babel -->
+    <script type="text/babel" src="App.js"></script>
 </body>
 </html>
