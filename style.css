@@ -1,6 +1,6 @@
 /* style.css */
 
-/* Define CSS Variables for Colors */
+/* Define CSS Variables for your brand colors */
 :root {
     --color-primary-light-blue: #6B74FE;
     --color-almost-black: #0E1005;
@@ -8,45 +8,45 @@
     --color-primary-dark-blue: #3B428C;
     --color-true-black: #000000;
 
-    /* Derived Colors for UI */
-    --color-primary-light-blue-bg: #E0E2FF; /* Lighter shade of primary-light-blue */
-    --color-accent-yellow-bg: #F7FBCE; /* Lighter shade of accent-yellow */
-    --color-primary-dark-text: #1A202C; /* A dark gray for general text */
-    --color-accent-yellow-darker: #C7D92B; /* A slightly darker shade of yellow for text/icons */
-    --color-gray-background: #F3F4F6; /* General light grey background */
+    /* Derived Colors for UI elements and backgrounds */
+    --color-primary-light-blue-bg: #E0E2FF; /* Lighter shade of primary-light-blue for backgrounds */
+    --color-accent-yellow-bg: #F7FBCE; /* Lighter shade of accent-yellow for backgrounds */
+    --color-primary-dark-text: #1A202C; /* A dark gray for general body text */
+    --color-accent-yellow-darker: #C7D92B; /* A slightly darker yellow for contrast */
+    --color-gray-background: #F3F4F6; /* General light grey background for sections */
     --color-white: #FFFFFF;
-    --color-light-gray-border: #D1D5DB;
-    --color-medium-gray-text: #4B5563;
-    --color-dark-gray-text-softer: #374151;
+    --color-light-gray-border: #D1D5DB; /* Light gray for borders */
+    --color-medium-gray-text: #4B5563; /* Medium gray for secondary text */
+    --color-dark-gray-text-softer: #374151; /* Soft dark gray for headings */
 }
 
-/* Base Styles */
+/* Base Styles for the entire application */
 body {
     margin: 0;
     font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering on macOS */
+    -moz-osx-font-smoothing: grayscale; /* Smoother font rendering on Firefox */
     background-color: var(--color-gray-background);
 }
 
 .app-container {
-    min-height: 100vh;
+    min-height: 100vh; /* Ensures the app takes at least the full viewport height */
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stacks header, main, footer vertically */
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    max-width: 1200px; /* Max width for content, keeps it readable */
+    margin: 0 auto; /* Centers the container */
+    padding: 0 1rem; /* Horizontal padding on smaller screens */
 }
 
 .main-content {
-    flex-grow: 1;
-    padding: 2rem 0; /* Adjusted padding for sections */
+    flex-grow: 1; /* Allows main content to take up available space */
+    padding: 2rem 0; /* Vertical padding for sections */
 }
 
-/* --- Animations --- */
+/* --- Global Animation Styles --- */
 .animate-fade-in-down {
     animation: fadeInDown 0.8s ease-out forwards;
     opacity: 0;
@@ -70,15 +70,15 @@ body {
     }
 }
 
-/* --- Header Styles --- */
+/* --- Header Section Styles --- */
 .main-header {
     background-color: var(--color-primary-dark-blue);
     color: var(--color-white);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     padding: 1rem 0;
-    position: sticky;
+    position: sticky; /* Makes header stick to the top */
     top: 0;
-    z-index: 50;
+    z-index: 50; /* Ensures header is above other content */
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
 }
@@ -98,22 +98,22 @@ body {
 }
 
 .agency-logo-image {
-    height: 2.5rem; /* Equivalent to h-10 */
-    width: auto;
+    height: 2.5rem; /* Standard height for the logo */
+    width: auto; /* Maintains aspect ratio */
 }
 
 .nav-desktop {
-    display: none; /* Hidden on small screens by default */
-    gap: 1.5rem; /* Equivalent to space-x-6 */
+    display: none; /* Hidden on small screens by default, shown on medium+ */
+    gap: 1.5rem; /* Space between navigation items */
 }
 
 .nav-desktop-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* Equivalent to space-x-2 */
+    gap: 0.5rem; /* Space between icon and text */
     padding: 0.5rem 1rem;
-    border-radius: 9999px; /* Equivalent to rounded-full */
-    transition: all 0.3s ease;
+    border-radius: 9999px; /* Fully rounded pills */
+    transition: all 0.3s ease; /* Smooth transitions for hover effects */
     background: none;
     border: none;
     cursor: pointer;
@@ -133,7 +133,7 @@ body {
 }
 
 .mobile-menu-toggle {
-    display: block; /* Shown on small screens by default */
+    display: block; /* Shown on small screens, hidden on medium+ */
 }
 
 .mobile-menu-button {
@@ -143,7 +143,7 @@ body {
     border: none;
     cursor: pointer;
     color: var(--color-white);
-    outline: none;
+    outline: none; /* Removes default focus outline */
     transition: background-color 0.3s ease;
 }
 
@@ -152,7 +152,7 @@ body {
 }
 
 .nav-mobile-dropdown {
-    background-color: rgba(59, 66, 140, 0.95); /* Using rgba for opacity based on primary-dark-blue */
+    background-color: rgba(59, 66, 140, 0.95); /* Semi-transparent background for dropdown */
     margin-top: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -185,10 +185,10 @@ body {
     color: var(--color-primary-dark-blue);
 }
 
-/* --- Footer Styles --- */
+/* --- Footer Section Styles --- */
 .main-footer {
     background-color: var(--color-almost-black);
-    color: var(--color-medium-gray-text); /* Adjusted from gray-300 */
+    color: var(--color-medium-gray-text);
     padding: 2rem 0;
     margin-top: 3rem;
     border-top-left-radius: 0.5rem;
@@ -210,19 +210,19 @@ body {
 }
 
 .footer-social-icon {
-    color: inherit; /* Inherit color from parent */
+    color: inherit; /* Inherits the gray color from the footer */
     transition: color 0.3s ease;
 }
 
 .footer-social-icon:hover {
-    color: var(--color-accent-yellow);
+    color: var(--color-accent-yellow); /* Changes to accent color on hover */
 }
 
 .footer-copyright-text {
     font-size: 0.875rem;
 }
 
-/* --- Home Page Styles --- */
+/* --- Home Page Section Styles --- */
 .home-section {
     padding: 4rem 0;
     text-align: center;
@@ -248,7 +248,7 @@ body {
     font-size: 1.125rem;
     color: var(--color-medium-gray-text);
     margin-bottom: 2.5rem;
-    max-width: 48rem;
+    max-width: 48rem; /* Limits line length for readability */
     margin-left: auto;
     margin-right: auto;
 }
@@ -274,7 +274,7 @@ body {
 }
 
 .cta-button:hover {
-    transform: scale(1.05);
+    transform: scale(1.05); /* Slight enlargement on hover */
 }
 
 .cta-button-primary {
@@ -315,7 +315,7 @@ body {
 
 .feature-card:hover {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    transform: translateY(-0.5rem);
+    transform: translateY(-0.5rem); /* Lifts the card on hover */
 }
 
 .feature-icon-wrapper {
@@ -336,7 +336,7 @@ body {
     color: var(--color-medium-gray-text);
 }
 
-/* --- Services Page Styles --- */
+/* --- Services Page Section Styles --- */
 .services-section {
     padding: 4rem 0;
     background-color: var(--color-white);
@@ -419,7 +419,7 @@ body {
     line-height: 1.625;
 }
 
-/* --- Portfolio Page Styles --- */
+/* --- Portfolio Page Section Styles --- */
 .portfolio-section {
     padding: 4rem 0;
     background-color: var(--color-gray-background);
@@ -469,7 +469,7 @@ body {
     background-color: var(--color-white);
     border-radius: 0.5rem;
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    overflow: hidden; /* Ensures image corners are rounded with card */
     transform: scale(1);
     transition: all 0.3s ease;
 }
@@ -481,7 +481,7 @@ body {
 .project-image {
     width: 100%;
     height: 12rem;
-    object-fit: cover;
+    object-fit: cover; /* Ensures image covers the area without distortion */
 }
 
 .project-details-content {
@@ -557,7 +557,7 @@ body {
     padding-left: 1.25rem;
 }
 
-/* --- Contact Us Page Styles --- */
+/* --- Contact Us Page Section Styles --- */
 .contact-section {
     padding: 4rem 0;
     background-color: var(--color-primary-light-blue-bg);
@@ -583,7 +583,7 @@ body {
 }
 
 .contact-form-container {
-    /* Implicitly handles its width within the grid */
+    /* Grid handles sizing */
 }
 
 .card-heading-subtitle {
@@ -600,7 +600,7 @@ body {
 }
 
 .form-field-group {
-    /* No specific styling, just for structure */
+    /* No specific styling, just for logical grouping */
 }
 
 .form-label {
@@ -623,7 +623,7 @@ body {
 .form-input-field:focus,
 .form-textarea-field:focus {
     border-color: transparent;
-    box-shadow: 0 0 0 2px var(--color-primary-dark-blue);
+    box-shadow: 0 0 0 2px var(--color-primary-dark-blue); /* Focus ring effect */
 }
 
 .form-submit-button {
@@ -637,7 +637,7 @@ body {
     padding: 1.5rem;
     background-color: var(--color-primary-light-blue-bg);
     border-radius: 0.75rem;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.06); /* Inner shadow effect */
     border: 1px solid var(--color-primary-light-blue-bg);
 }
 
@@ -677,45 +677,45 @@ body {
     color: var(--color-primary-dark-blue);
 }
 
-/* --- Media Queries for Responsiveness --- */
+/* --- Media Queries for Responsive Design --- */
 
-/* Medium devices (tablets, 768px and up) */
+/* Adjusts layout for medium-sized devices (e.g., tablets, 768px and up) */
 @media (min-width: 768px) {
     .nav-desktop {
-        display: flex;
+        display: flex; /* Show desktop navigation */
     }
     .mobile-menu-toggle {
-        display: none;
+        display: none; /* Hide mobile menu toggle */
     }
     .home-title {
-        font-size: 3.75rem;
+        font-size: 3.75rem; /* Larger title on wider screens */
     }
     .home-action-buttons {
-        gap: 1.5rem;
+        gap: 1.5rem; /* More space between buttons */
     }
     .home-feature-cards-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns for features */
     }
     .services-cards-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for services */
     }
     .portfolio-project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for portfolio projects */
     }
     .case-study-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for case studies */
     }
     .contact-content-layout {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for contact form/info */
     }
 }
 
-/* Large devices (desktops, 1024px and up) */
+/* Adjusts layout for large-sized devices (e.g., desktops, 1024px and up) */
 @media (min-width: 1024px) {
     .services-cards-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns for services on large screens */
     }
     .portfolio-project-grid {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 columns for portfolio projects on large screens */
     }
 }
