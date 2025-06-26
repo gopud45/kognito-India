@@ -1,11 +1,11 @@
 // App.js
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+// React and ReactDOM are expected to be available globally via CDN links in index.html
+// as this setup is for direct browser execution without a local build tool.
 import { Home, Briefcase, Users, Mail, Menu, X, Rocket, Code, Instagram, Linkedin, Twitter } from 'lucide-react'; // Importing icons
 
 // Header Component
 const Header = ({ currentPage, setCurrentPage, logoSrc }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false); // Using React.useState explicitly
 
   const navItems = [
     { name: 'Home', icon: Home, page: 'home' },
@@ -418,7 +418,7 @@ const ContactUsPage = () => (
 
 // Main App Component
 const App = () => {
-  const [currentPage, setCurrentPage] = useState('home'); // 'home', 'services', 'portfolio', 'contact'
+  const [currentPage, setCurrentPage] = React.useState('home'); // Using React.useState explicitly
 
   let PageComponent;
   switch (currentPage) {
@@ -438,8 +438,8 @@ const App = () => {
       PageComponent = HomePage;
   }
 
-  // Define the logo source
-  const kognitoLogo = "WhatsApp Image 2025-06-24 at 10.44.26 PM.jpeg-6946a111-6a80-4f83-8fde-5c57fc6caf5a"; // Replace with your actual hosted image URL if available later
+  // Define the logo source. This path assumes the image is in the same directory as index.html
+  const kognitoLogo = "WhatsApp Image 2025-06-24 at 10.44.26 PM.jpeg-6946a111-6a80-4f83-8fde-5c57fc6caf5a"; // Ensure this image file is in the same directory as index.html and App.js
 
   return (
     <div className="app-container">
@@ -452,5 +452,6 @@ const App = () => {
   );
 };
 
-// Render the React app to the DOM
-ReactDOM.render(<App />, document.getElementById('root'));
+// This line is important for rendering your React App.
+// It will be part of the App.js file's content.
+// ReactDOM.render(<App />, document.getElementById('root'));
